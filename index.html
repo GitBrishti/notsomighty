@@ -1,11 +1,33 @@
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>notsomighty</title>
+
+    <!-- Black favicon for light mode -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon-black.png"
+      media="(prefers-color-scheme: light)"
+    />
+
+    <!-- White favicon for dark mode -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon-white.png"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>NotSoMighty | Art Beyond the Canvas</title>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

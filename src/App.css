@@ -31,15 +31,25 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 165px;
-  background: var(--cream);
+  scroll-padding-top: 160px;
 }
 
 body {
   margin: 0;
+  background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
-  background: var(--cream);
+}
+
+#root,
+.site,
+main {
+  min-width: 0;
+}
+
+.site {
+  min-height: 100vh;
+  overflow-x: clip;
 }
 
 button,
@@ -68,51 +78,7 @@ input:focus-visible {
   outline-offset: 3px;
 }
 
-/* ========== GLOBAL PAPER TEXTURE ========== */
-
-/*
-  This texture is applied to the actual page,
-  not separately restarted in every section.
-*/
-
-body {
-  background-color: var(--cream);
-  background-image: var(--texture);
-  background-repeat: repeat;
-  background-position: top left;
-  background-size: 850px auto;
-  background-attachment: fixed;
-}
-
-#root,
-.site,
-main {
-  background: transparent;
-}
-
-.site {
-  overflow-x: clip;
-  min-height: 100vh;
-}
-
-/*
-  All neutral sections are transparent so
-  the same texture remains visible behind them.
-*/
-
-.intro,
-.featured,
-.shop,
-.listing-section,
-.related,
-.collection-hero,
-.product-detail,
-.not-found {
-  background-image: none;
-  background-color: transparent;
-}
-
-/* ========== TYPOGRAPHY ========== */
+/* ========== TEXT ========== */
 
 .eyebrow {
   font-size: 11px;
@@ -124,114 +90,111 @@ main {
 .intro h2,
 .section-title h2,
 .related h2 {
-  font-size: clamp(48px, 6.3vw, 85px);
-  line-height: 1.07;
+  font-size: clamp(46px, 6vw, 84px);
+  line-height: 1.08;
   letter-spacing: -0.055em;
-  margin: 12px 0 22px;
+  margin: 12px 0 20px;
   font-weight: 800;
 }
 
 .intro h2 em,
 .section-title h2 em,
-.related h2 em,
-.about h2 em {
+.related h2 em {
   font-family: var(--script);
-  font-size: 1.18em;
-  font-style: normal;
+  font-size: 1.23em;
   font-weight: 400;
-  line-height: 0.85;
+  font-style: normal;
   letter-spacing: 0;
+  line-height: 0.9;
   color: var(--coral);
 }
 
-/* The good stuff: only "good" is handwritten */
-.shop .section-title h2 {
-  font-family: var(--sans);
-  font-weight: 800;
-}
-
-.shop .section-title h2 em {
-  font-family: var(--script);
-  font-weight: 400;
-  font-size: 1.25em;
-}
-
-/* ========== STICKY HEADER ========== */
+/* ========== HEADER ========== */
 
 .sticky-shell {
   position: sticky;
   top: 0;
   z-index: 100;
   background: var(--cream);
-  box-shadow: 0 3px 0 rgba(41, 40, 33, 0.22);
+  box-shadow: 0 3px 0 rgba(41, 40, 33, 0.2);
 }
 
 .announcement {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  padding: 8px 10px;
+  gap: 8px;
+  padding: 7px 10px;
   background: var(--teal);
   text-align: center;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
 }
 
 .header {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 12px;
-  min-height: 79px;
+  min-height: 77px;
   padding: 7px 5%;
+}
+
+.header-left,
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+}
+
+.header-left {
+  justify-content: flex-start;
+}
+
+.header-actions {
+  justify-content: flex-end;
 }
 
 .brand {
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-self: center;
 }
 
 .brand img {
-  width: 180px;
-  height: 65px;
+  width: 165px;
+  height: 60px;
   object-fit: contain;
-}
-
-.header-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 14px;
 }
 
 /* ========== ROUND ICONS ========== */
 
 .round-icon {
-  position: relative;
   display: grid;
   place-items: center;
   flex: none;
-  width: 46px;
-  height: 46px;
+  width: 45px;
+  height: 45px;
   padding: 0;
   border: 2px solid var(--ink);
   border-radius: 50%;
   color: var(--ink);
   box-shadow: 3px 4px 0 var(--ink);
   transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .round-icon:hover {
-  transform: translateY(-3px) rotate(-8deg);
+  transform: translateY(-3px) rotate(-7deg);
   box-shadow: 4px 6px 0 var(--ink);
 }
 
 .round-icon svg {
-  width: 23px;
-  height: 23px;
+  width: 22px;
+  height: 22px;
   stroke-width: 2.5;
 }
 
@@ -243,32 +206,29 @@ main {
   background: var(--paper);
 }
 
-.bag-icon {
-  background: var(--coral);
+.profile-icon {
+  background: var(--paper);
 }
 
-.icon-spark {
-  position: absolute;
-  top: -14px;
-  right: -10px;
-  font-size: 22px;
+.bag-icon {
+  background: var(--yellow);
 }
 
 /* ========== NAVIGATION ========== */
 
 .navigation {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 9px;
-  padding: 3px 12px 18px;
+  justify-content: center;
+  gap: 8px;
+  padding: 3px 12px 17px;
   background: var(--cream);
   font-size: 13px;
   font-weight: 800;
 }
 
 .navigation a {
-  padding: 10px 17px;
+  padding: 9px 15px;
   border-radius: 30px;
   transition: background 0.2s;
 }
@@ -284,7 +244,7 @@ main {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  width: min(580px, calc(100% - 30px));
+  width: min(560px, calc(100% - 24px));
   padding: 18px;
   border: 2px solid var(--ink);
   border-radius: 0 0 24px 24px;
@@ -292,10 +252,19 @@ main {
   box-shadow: 5px 6px 0 var(--ink);
 }
 
-.search-panel label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: 800;
+.search-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.search-heading button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
 }
 
 .search-panel input {
@@ -304,19 +273,20 @@ main {
   border: 2px solid var(--ink);
   border-radius: 30px;
   background: white;
+  outline: none;
 }
 
 .search-hits {
-  margin-top: 10px;
-  max-height: 260px;
+  max-height: 280px;
+  margin-top: 12px;
   overflow-y: auto;
 }
 
 .search-hits a {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 14px;
+  justify-content: space-between;
+  gap: 12px;
   padding: 11px 9px;
   border-bottom: 1px solid #ddd;
   font-weight: 700;
@@ -328,7 +298,7 @@ main {
 
 .search-hits small {
   display: block;
-  margin-top: 2px;
+  margin-top: 3px;
   font-size: 10px;
   font-weight: 500;
 }
@@ -342,14 +312,9 @@ main {
 .hero {
   display: grid;
   grid-template-columns: 42% 58%;
-  min-height: 520px;
+  min-height: 550px;
   overflow: hidden;
-
-  background-color: var(--yellow);
-  background-image: var(--texture);
-  background-position: center;
-  background-repeat: repeat;
-  background-size: 850px auto;
+  background: var(--yellow);
 }
 
 .hero-poster {
@@ -360,20 +325,22 @@ main {
   justify-content: flex-end;
   min-width: 0;
   overflow: hidden;
+  background: var(--yellow);
 }
 
 .hero-poster img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: bottom right;
+  object-fit: cover;
+  object-position: center;
   transition: transform 0.35s ease;
 }
 
 .hero-poster:hover img {
-  transform: scale(1.02);
+  transform: scale(1.025);
 }
 
+/* Paper texture ONLY behind hero text */
 .hero-copy {
   position: relative;
   grid-column: 1;
@@ -383,28 +350,34 @@ main {
   align-items: flex-start;
   justify-content: center;
   min-width: 0;
-  padding: 45px 5% 45px 10%;
+  padding: 55px 7% 55px 10%;
+
+  background-color: var(--yellow);
+  background-image: var(--texture);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 850px auto;
 }
 
 .hero-script {
+  margin: 12px 0 0;
   font-family: var(--script);
-  font-size: clamp(90px, 11vw, 160px);
+  font-size: clamp(95px, 11vw, 160px);
   font-weight: 400;
   line-height: 0.9;
   color: var(--coral);
-  margin: 12px 0 0;
 }
 
 .hero h1 {
-  font-size: clamp(28px, 3vw, 48px);
+  margin: 20px 0 32px;
+  font-size: clamp(29px, 3vw, 49px);
   line-height: 1.1;
   letter-spacing: -0.05em;
-  margin: 15px 0 30px;
 }
 
 .hero-spark {
   position: absolute;
-  top: 25%;
+  top: 23%;
   right: 11%;
   font-size: 55px;
   color: var(--coral);
@@ -416,9 +389,9 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 13px;
   min-height: 48px;
-  padding: 12px 22px;
+  padding: 12px 23px;
   border: 2px solid var(--ink);
   border-radius: 99px;
   font-weight: 800;
@@ -433,17 +406,14 @@ main {
   box-shadow: 5px 8px 0 var(--ink);
 }
 
-.pill-button.coral {
+.pill-button.coral,
+.pill-button.find-your-thing {
   color: white;
   background: var(--coral);
 }
 
-.pill-button.dark {
-  color: white;
-  background: var(--ink);
-}
-
 .pill-button.cream {
+  color: var(--ink);
   background: var(--cream);
 }
 
@@ -454,38 +424,40 @@ main {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 17px 10px;
+  gap: 18px;
+  padding: 16px 10px;
   background: var(--teal);
   text-align: center;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.06em;
 }
 
 .ticker b {
   color: var(--cream);
-  font-size: 19px;
+  font-size: 18px;
 }
 
 /* ========== INTRO ========== */
 
 .intro {
-  padding: 93px 20px 100px;
+  padding: 90px 20px 100px;
+  background: var(--paper);
   text-align: center;
 }
 
 .intro p {
-  max-width: 490px;
+  max-width: 500px;
   margin: 0 auto 26px;
   font-size: 17px;
   line-height: 1.65;
 }
 
-/* ========== FEATURED SECTION ========== */
+/* ========== FEATURED ========== */
 
 .featured {
-  padding: 80px 6% 90px;
+  padding: 78px 6% 92px;
+  background: var(--paper);
 }
 
 .section-title {
@@ -496,12 +468,8 @@ main {
   margin-bottom: 14px;
 }
 
-.section-title h2 {
-  margin: 10px 0 20px;
-}
-
 .title-sticker {
-  font-size: 78px;
+  font-size: 76px;
   color: var(--teal);
   transform: rotate(12deg);
   line-height: 1;
@@ -516,6 +484,20 @@ main {
   line-height: 1.6;
 }
 
+/* Fresh = Billabong, finds = Bricolage */
+.fresh-heading {
+  font-family: var(--sans);
+  font-weight: 800;
+}
+
+.fresh-heading em {
+  font-family: var(--script);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25em;
+  color: var(--coral);
+}
+
 /* ========== PRODUCT GRID ========== */
 
 .product-grid {
@@ -524,8 +506,6 @@ main {
   gap: 26px;
   align-items: stretch;
 }
-
-/* ========== PRODUCT CARDS ========== */
 
 .product-tile {
   display: flex;
@@ -544,12 +524,6 @@ main {
   transform: translateY(-6px);
 }
 
-/*
-  Important:
-  Do not force a white background onto the mockup.
-  Preserve the image's own dark/light studio scene.
-*/
-
 .product-picture {
   display: grid;
   place-items: center;
@@ -560,7 +534,6 @@ main {
 }
 
 .product-picture img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -569,7 +542,7 @@ main {
 }
 
 .product-tile:hover .product-picture img {
-  transform: scale(1.04);
+  transform: scale(1.035);
 }
 
 .product-caption {
@@ -618,12 +591,12 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 8px;
   width: 100%;
   height: 100%;
   padding: 14px;
-  text-align: center;
   background: #f5e4bd;
+  text-align: center;
 }
 
 .artwork-fallback span {
@@ -636,17 +609,18 @@ main {
   text-transform: uppercase;
 }
 
-/* ========== CATEGORY SECTION ========== */
+/* ========== CATEGORIES ========== */
 
 .shop {
-  padding: 78px 6% 95px;
+  padding: 80px 6% 95px;
+  background: var(--yellow);
   border-radius: 35px 35px 0 0;
 }
 
 .category-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 36px 30px;
+  gap: 35px 30px;
   padding: 14px 10px 20px;
 }
 
@@ -669,31 +643,19 @@ main {
 }
 
 .tone-teal {
-  background-color: var(--teal);
+  background: var(--teal);
 }
 
 .tone-yellow {
-  background-color: #f9df96;
+  background: #f9df96;
 }
 
 .tone-coral {
-  background-color: var(--coral);
+  background: var(--coral);
 }
 
 .tone-cream {
-  background-color: var(--paper);
-}
-
-/* Colorful cards must remain colorful */
-.category-card.tone-teal,
-.category-card.tone-yellow,
-.category-card.tone-coral,
-.category-card.tone-cream,
-.related-card.tone-teal,
-.related-card.tone-yellow,
-.related-card.tone-coral,
-.related-card.tone-cream {
-  background-image: none;
+  background: var(--paper);
 }
 
 .card-top {
@@ -704,12 +666,12 @@ main {
 }
 
 .card-top small {
+  padding: 4px 8px;
   border: 1.5px solid var(--ink);
   border-radius: 30px;
-  padding: 4px 8px;
+  background: #ffffff55;
   font-size: 9px;
   font-weight: 700;
-  background: #ffffff55;
 }
 
 .card-symbol {
@@ -825,10 +787,14 @@ main {
 }
 
 .about h2 {
+  margin: 15px 0 20px;
   font-size: clamp(48px, 6vw, 78px);
   line-height: 1.06;
   letter-spacing: -0.05em;
-  margin: 15px 0 20px;
+}
+
+.about .mrinal-name {
+  color: white;
 }
 
 .about p {
@@ -888,18 +854,11 @@ main {
   overflow: hidden;
 }
 
-.collection-hero.tone-teal,
-.collection-hero.tone-yellow,
-.collection-hero.tone-coral,
-.collection-hero.tone-cream {
-  background: transparent;
-}
-
 .collection-hero-copy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
   gap: 12px;
   padding: 58px 8%;
 }
@@ -914,15 +873,11 @@ main {
 }
 
 .collection-hero h1 {
+  margin: 0;
   font-size: clamp(50px, 6vw, 88px);
   line-height: 1;
   letter-spacing: -0.055em;
   overflow-wrap: anywhere;
-  margin: 0;
-}
-
-.collection-hero h1 span {
-  color: var(--coral);
 }
 
 .collection-hero-copy p {
@@ -962,19 +917,15 @@ main {
   line-height: 1;
 }
 
-/* ========== COLLECTION PRODUCT LIST ========== */
+/* ========== COLLECTION LIST ========== */
 
 .listing-section {
-  padding: 95px 7% 95px;
+  padding: 90px 7% 95px;
+  background: var(--paper);
 }
 
 .listing-section .section-title {
   margin-bottom: 28px;
-}
-
-.listing-section .section-title h2 {
-  margin-top: 12px;
-  margin-bottom: 16px;
 }
 
 /* ========== EMPTY COLLECTION ========== */
@@ -984,7 +935,7 @@ main {
   border: 2px dashed var(--ink);
   border-radius: 28px;
   text-align: center;
-  background: rgba(254, 240, 214, 0.8);
+  background: var(--cream);
 }
 
 .empty-collection > span {
@@ -999,10 +950,11 @@ main {
   margin-bottom: 25px;
 }
 
-/* ========== RELATED COLLECTIONS ========== */
+/* ========== RELATED ========== */
 
 .related {
   padding: 68px 7%;
+  background: var(--paper);
 }
 
 .related-links {
@@ -1036,6 +988,7 @@ main {
   align-items: start;
   gap: 55px;
   padding: 65px 7% 95px;
+  background: var(--paper);
 }
 
 .product-detail-main {
@@ -1054,12 +1007,12 @@ main {
   object-fit: contain;
 }
 
-/* ========== CALENDAR THUMBNAILS ========== */
+/* ========== THUMBNAILS ========== */
 
 .thumbnails {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 12px;
   margin-top: 15px;
 }
 
@@ -1116,14 +1069,21 @@ main {
   line-height: 1.6;
 }
 
+/* ========== PLACEHOLDER PAGES ========== */
+
 .not-found {
   min-height: 45vh;
   padding: 100px 20px;
+  background: var(--paper);
   text-align: center;
 }
 
 .not-found h1 {
   font-size: 45px;
+}
+
+.not-found p {
+  margin-bottom: 28px;
 }
 
 /* ========== TABLET ========== */
@@ -1154,12 +1114,7 @@ main {
 
 @media (max-width: 700px) {
   html {
-    scroll-padding-top: 116px;
-  }
-
-  body {
-    background-size: 650px auto;
-    background-attachment: scroll;
+    scroll-padding-top: 112px;
   }
 
   .announcement {
@@ -1169,30 +1124,31 @@ main {
   }
 
   .header {
-    grid-template-columns: 42px minmax(0, 1fr) 91px;
-    min-height: 64px;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    min-height: 62px;
+    gap: 5px;
+    padding: 6px 10px;
+  }
+
+  .header-left,
+  .header-actions {
     gap: 6px;
-    padding: 5px 12px;
   }
 
   .brand img {
-    width: 130px;
-    height: 50px;
-  }
-
-  .header-actions {
-    gap: 8px;
+    width: 110px;
+    height: 46px;
   }
 
   .round-icon {
-    width: 39px;
-    height: 39px;
+    width: 34px;
+    height: 34px;
     box-shadow: 2px 3px 0 var(--ink);
   }
 
   .round-icon svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 
   .navigation {
@@ -1223,13 +1179,12 @@ main {
     padding: 14px;
   }
 
-  /* MOBILE HERO — POSTER FIRST */
+  /* Poster comes immediately after header */
 
   .hero {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    background-size: 650px auto;
   }
 
   .hero-poster {
@@ -1247,8 +1202,10 @@ main {
 
   .hero-copy {
     order: 1;
+    width: 100%;
     min-height: 0;
     padding: 24px 22px 34px;
+    background-size: 650px auto;
   }
 
   .hero-script {
@@ -1288,8 +1245,6 @@ main {
   .intro p {
     font-size: 15px;
   }
-
-  /* MOBILE FEATURED */
 
   .featured {
     padding: 65px 18px 75px;
@@ -1334,8 +1289,6 @@ main {
     height: 30px;
   }
 
-  /* MOBILE CATEGORIES */
-
   .shop {
     padding: 62px 19px 76px;
     border-radius: 27px 27px 0 0;
@@ -1375,8 +1328,6 @@ main {
     font-size: 10px;
   }
 
-  /* MOBILE ABOUT */
-
   .about {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1397,8 +1348,6 @@ main {
     font-size: 15px;
   }
 
-  /* MOBILE FOOTER */
-
   .footer {
     padding: 50px 23px 25px;
   }
@@ -1414,8 +1363,6 @@ main {
   .footer-bottom {
     margin-top: 38px;
   }
-
-  /* MOBILE COLLECTION PAGE */
 
   .collection-hero {
     grid-template-columns: 1fr;
@@ -1451,8 +1398,6 @@ main {
     min-height: 90px;
   }
 
-  /* MOBILE PRODUCT DETAIL */
-
   .product-detail {
     grid-template-columns: 1fr;
     gap: 25px;
@@ -1468,22 +1413,22 @@ main {
 
 @media (max-width: 390px) {
   .header {
-    grid-template-columns: 38px minmax(0, 1fr) 84px;
-    padding: 5px 8px;
+    padding-inline: 6px;
     gap: 3px;
   }
 
-  .round-icon {
-    width: 36px;
-    height: 36px;
-  }
-
-  .header-actions {
-    gap: 6px;
-  }
-
   .brand img {
-    width: 115px;
+    width: 98px;
+  }
+
+  .round-icon {
+    width: 31px;
+    height: 31px;
+  }
+
+  .header-left,
+  .header-actions {
+    gap: 5px;
   }
 
   .category-grid {
@@ -1518,4 +1463,18 @@ main {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* PAPER TEXTURE ACROSS THE ENTIRE HERO */
+
+.hero {
+  background: #eac56a url("/images/bg_texture.png")
+    center center / cover no-repeat;
+}
+
+/* Remove separate background behind poster */
+
+.hero .hero-poster {
+  background: transparent;
+  background-image: none;
 }

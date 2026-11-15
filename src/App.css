@@ -1478,3 +1478,106 @@ input:focus-visible {
   background: transparent;
   background-image: none;
 }
+
+
+/* ===================================
+   CATEGORY CARDS — PLAYFUL BOUNCE
+=================================== */
+
+@keyframes categoryBounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  35% {
+    transform: translateY(-12px) rotate(-1.5deg);
+  }
+
+  60% {
+    transform: translateY(3px) rotate(1deg);
+  }
+
+  80% {
+    transform: translateY(-4px) rotate(-0.5deg);
+  }
+}
+
+/* Add this class to category cards only */
+
+.bouncy-category {
+  animation: categoryBounce 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Stagger the animation */
+
+.bouncy-category:nth-child(2n) {
+  animation-delay: -0.7s;
+}
+
+.bouncy-category:nth-child(3n) {
+  animation-delay: -1.4s;
+}
+
+/* Extra bounce on hover */
+
+@media (hover: hover) {
+  .bouncy-category:hover {
+    animation-play-state: paused;
+    transform: translateY(-8px) rotate(-2deg);
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .bouncy-category {
+    animation: none;
+  }
+}
+
+
+/* =========================================
+   NOTSOMIGHTY — BOUNCY CATEGORY CARDS
+========================================= */
+
+@keyframes categoryFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  30% {
+    transform: translateY(-12px) rotate(-1.5deg);
+  }
+
+  55% {
+    transform: translateY(3px) rotate(1deg);
+  }
+
+  75% {
+    transform: translateY(-5px) rotate(-0.5deg);
+  }
+}
+
+.category-grid .bouncy-category {
+  animation: categoryFloat 3s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.4s);
+}
+
+/* More playful on hover */
+
+@media (hover: hover) {
+  .category-grid .bouncy-category:hover {
+    animation-play-state: paused;
+    transform: translateY(-10px) rotate(-2deg);
+  }
+}
+
+/* Respect reduced motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+  .category-grid .bouncy-category {
+    animation: none;
+  }
+}
+

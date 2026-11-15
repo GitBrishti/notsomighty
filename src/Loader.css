@@ -1,0 +1,81 @@
+
+/* ==================================
+   NOTSOMIGHTY WEBSITE LOADER
+   Desktop + Mobile
+================================== */
+
+.site-loader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #fef0d6;
+}
+
+/* GIF ANIMATION */
+
+.site-loader-gif {
+  display: block;
+
+  width: 420px;
+  max-width: 80vw;
+  max-height: 75vh;
+
+  height: auto;
+  object-fit: contain;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .site-loader-gif {
+    width: 340px;
+    max-width: 80vw;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .site-loader {
+    padding: 20px;
+  }
+
+  .site-loader-gif {
+    width: 260px;
+    max-width: 85vw;
+    max-height: 65vh;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 360px) {
+  .site-loader-gif {
+    width: 220px;
+    max-width: 85vw;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-loader-gif {
+    display: none;
+  }
+
+  .site-loader::after {
+    content: "Loading NotSoMighty...";
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+  }
+}

@@ -576,7 +576,7 @@ function CategoriesSection() {
           <a
             key={category.id}
             href={`#/collections/${category.id}`}
-            className={`category-card tone-${category.tone} bounce-in`}
+            className={`category-card tone-${category.tone} bounce-in bouncy-category`}
             style={{ "--i": index }}
           >
             <div className="card-top">

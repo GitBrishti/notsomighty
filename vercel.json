@@ -1,0 +1,25 @@
+
+{
+  "rewrites": [
+    {
+      "source": "/api/health",
+      "destination": "/api/catalog-api"
+    },
+    {
+      "source": "/api/categories",
+      "destination": "/api/catalog-api"
+    },
+    {
+      "source": "/api/categories/:id",
+      "destination": "/api/catalog-api"
+    },
+    {
+      "source": "/api/products",
+      "destination": "/api/catalog-api"
+    },
+    {
+      "source": "/api/products/:id",
+      "destination": "/api/catalog-api"
+    }
+  ]
+}

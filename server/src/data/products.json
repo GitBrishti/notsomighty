@@ -1,0 +1,118 @@
+[
+  {
+    "id": "masaan",
+    "name": "Masaan",
+    "category": "posters",
+    "type": "Illustrated poster",
+    "description": "An illustrated tribute to the stories and emotions that stay with us.",
+    "images": [
+      "/products/posters/masaan@0.5x.png"
+    ],
+    "featured": true,
+    "price": null,
+    "variants": [],
+    "availability": "not_announced"
+  },
+  {
+    "id": "october",
+    "name": "October",
+    "category": "posters",
+    "type": "Illustrated poster",
+    "description": "A quiet, thoughtful piece inspired by a story that lingers.",
+    "images": [
+      "/products/posters/october@0.5x.png"
+    ],
+    "featured": true,
+    "price": null,
+    "variants": [],
+    "availability": "not_announced"
+  },
+  {
+    "id": "namesake",
+    "name": "Namesake",
+    "category": "posters",
+    "type": "Illustrated poster",
+    "description": "A visual celebration of stories, belonging and identity.",
+    "images": [
+      "/products/posters/namesake@0.5x.png"
+    ],
+    "featured": false,
+    "price": null,
+    "variants": [],
+    "availability": "not_announced"
+  },
+  {
+    "id": "labour-of-love",
+    "name": "Labour of Love",
+    "category": "posters",
+    "type": "Illustrated poster",
+    "description": "Original illustrated artwork made for the walls you love.",
+    "images": [
+      "/products/posters/labour of love@0.5x.png"
+    ],
+    "featured": false,
+    "price": null,
+    "variants": [],
+    "availability": "not_announced"
+  },
+  {
+    "id": "indian-calendar",
+    "name": "Indian Calendar",
+    "category": "calendars",
+    "type": "Calendar mockups",
+    "description": "A desk calendar concept celebrating Indian cinema.",
+    "images": [
+      "/products/calendars/indian 1@0.5x.png",
+      "/products/calendars/indian 2@0.5x.png"
+    ],
+    "featured": false,
+    "price": null,
+    "variants": [],
+    "availability": "not_announced"
+  },
+  {
+    "id": "kobita-calendar",
+    "name": "Kobita Calendar",
+    "category": "calendars",
+    "type": "Calendar mockups",
+    "description": "Poetry and illustration brought into everyday moments.",
+    "images": [
+      "/products/calendars/kobita 1@0.5x.png",
+      "/products/calendars/kobita 2@0.5x.png"
+    ],
+    "featured": true,
+    "price": null,
+    "variants": [],
+    "availability": "not_announced"
+  },
+  {
+    "id": "playlist-calendar",
+    "name": "Playlist Calendar",
+    "category": "calendars",
+    "type": "Calendar mockups",
+    "description": "A colorful calendar concept inspired by music and playlists.",
+    "images": [
+      "/products/calendars/playlist 1@0.5x.png",
+      "/products/calendars/playlist 2@0.5x.png"
+    ],
+    "featured": true,
+    "price": null,
+    "variants": [],
+    "availability": "not_announced"
+  },
+  {
+    "id": "world-calendar",
+    "name": "World Calendar",
+    "category": "calendars",
+    "type": "Calendar mockups",
+    "description": "A visual journey through cinema, places and everyday creativity.",
+    "images": [
+      "/products/calendars/world 1@0.5x.png",
+      "/products/calendars/world 2@0.5x.png"
+    ],
+    "featured": false,
+    "price": null,
+    "variants": [],
+    "availability": "not_announced"
+  }
+]

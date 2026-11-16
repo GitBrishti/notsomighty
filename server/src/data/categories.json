@@ -1,0 +1,58 @@
+[
+  {
+    "id": "posters",
+    "name": "Posters",
+    "subtitle": "For walls with stories to tell",
+    "tone": "teal",
+    "symbol": "✳"
+  },
+  {
+    "id": "calendars",
+    "name": "Calendars",
+    "subtitle": "A little joy, all year long",
+    "tone": "yellow",
+    "symbol": "✿"
+  },
+  {
+    "id": "bookmarks",
+    "name": "Bookmarks",
+    "subtitle": "Small art for big stories",
+    "tone": "coral",
+    "symbol": "✦"
+  },
+  {
+    "id": "invitations",
+    "name": "Invitation Cards",
+    "subtitle": "Start something wonderful",
+    "tone": "cream",
+    "symbol": "♡"
+  },
+  {
+    "id": "tshirts",
+    "name": "T-shirts",
+    "subtitle": "Wear what you love",
+    "tone": "yellow",
+    "symbol": "★"
+  },
+  {
+    "id": "mugs",
+    "name": "Coffee Mugs",
+    "subtitle": "A little art with your coffee",
+    "tone": "cream",
+    "symbol": "☻"
+  },
+  {
+    "id": "magnets",
+    "name": "Fridge Magnets",
+    "subtitle": "Tiny pieces of happiness",
+    "tone": "teal",
+    "symbol": "✳"
+  },
+  {
+    "id": "coasters",
+    "name": "Coasters",
+    "subtitle": "Everyday things, made fun",
+    "tone": "coral",
+    "symbol": "✿"
+  }
+]
